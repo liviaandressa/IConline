@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarala:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    font-size: 100%;
+    background: #323238;
+}
+
+.cabecalho{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px;
+    background-color: #6172F3;
+    height: 30px;
+    position: fixed;
+width: 100%;}
+
+.cabecalho-titulo{
+    font-family: 'Righteous', cursive;
+    color: #FFFFFF;
+    font-weight: 70;
+    font-size: 24px;
+}
+
+.cabecalho-menu{
+    display: flex;
+    gap: 30px;
+}
+
+.cabecalho-item-menu{
+    color: #FFF2E7;
+    font-family: 'Sarala', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.conteudo{
+    margin-bottom: 30px;
+}
+
+
+
+.conteudo-principal{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    color: #6172F3;
+}
+
+.conteudo-escrito{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.conteudo-principal-titulo{
+    font-family: 'Righteous', cursive;
+    color: #6172F3;
+    font-weight: 300;
+    font-size: 45px;
+    margin-top: 100px;
+    display: flex;
+}
+
+.conteudo-principal-subtitulo{
+    font-family: 'Sarala', sans-serif;
+    color: #F5F8FF;
+    font-size: 17px;
+    font-weight: 230;
+    margin: 10px 100px 100px 10px;
+}
+
+.imagem-ondaHome{
+    max-width: 100%;
+    overflow: hidden;}
+
+
+
+.rodape{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+
+.rodape-logo{
+    height: 48px;
+    display: block;
+    margin: 0 auto;
+}
+
+.imagem-principal{
+    margin: 100px;
+}
+
+.footer-titulo{
+    font-family: 'Righteous', cursive;
+    color: #6172F3;
+    font-weight: 70;
+    font-size: 24px;
+
+}
+
+ol{
+    list-style-type: none;  
+    font-family: 'Righteous', cursive;
+
+    color: #FFF2E7;            
+}
+
+li{
+    padding-bottom: 5px;
+}
+
