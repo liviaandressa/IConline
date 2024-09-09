@@ -1,0 +1,63 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastre-se</title>
+    <link rel="stylesheet" href="cadastroUsuario.css" />
+  </head>
+  <body>
+    <body>
+      <main>
+        <section class="conteudo">
+          <div class="formulario">
+            <h1>Criar uma conta</h1>
+
+            <form action="/submit" method="post">
+              <!-- Campo para o nome -->
+              <input
+                placeholder="Nome"
+                type="text"
+                id="nome"
+                name="nome"
+                required
+              /><br /><br />
+
+              <!-- Campo para o e-mail -->
+              <input
+                placeholder="E-mail institucional"
+                type="email"
+                id="email"
+                name="email"
+                required
+              /><br /><br />
+
+              <!-- Campo para a senha -->
+              <input
+                placeholder="Informe uma senha"
+                type="password"
+                id="senha"
+                name="senha"
+                required
+              /><br /><br />
+
+              <!-- Botão de envio -->
+              <button type="button">Cadastrar</button>
+            </form>
+          </div>
+
+          <div class="conteudo-imagem">
+            <img
+              class="imagem-principal"
+              src="imagens/imagem-principal.png"
+              alt=""
+            />
+          </div>
+        </section>
+      </main>
+    </body>
+  </body>
+</html>
+0
