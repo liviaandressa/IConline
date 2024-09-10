@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarala:wght@400;700&display=swap');
+
+>>>>>>> a9b09f1b4dda87d1036ee512391379398c6badcc
 * {
     margin: 0;
     padding: 0;
@@ -29,7 +34,11 @@ padding: 15px;
 gap: 1px;
 
 width: 350px;
+<<<<<<< HEAD
 height: 40zpx;
+=======
+height: 40px;
+>>>>>>> a9b09f1b4dda87d1036ee512391379398c6badcc
 
 background: rgba(128, 152, 249, 0.1);
 border: 2px solid rgba(128, 152, 249, 0.5);
@@ -42,6 +51,19 @@ flex-grow: 0;
 
 
 }
+<<<<<<< HEAD
+=======
+
+.conteudo-principal-titulo{
+    font-family: 'Righteous', cursive;
+    color: #6172F3;
+    font-weight: 300;
+    font-size: 45px;
+    margin-top: 100px;
+    display: flex;
+}
+
+>>>>>>> a9b09f1b4dda87d1036ee512391379398c6badcc
 .conteudo-imagem{
     border-radius: 28px;
     background-color: #6172F3;
@@ -56,4 +78,30 @@ flex-grow: 0;
     padding: 10px;
     height: 70%;
     
+<<<<<<< HEAD
+=======
+}
+
+.botao-principal{
+    /* Frame 175 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 15px;
+gap: 10px;
+
+width: 350px;
+height: 40px;
+background: #8098F9;
+border-radius: 10px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+>>>>>>> a9b09f1b4dda87d1036ee512391379398c6badcc
 }
