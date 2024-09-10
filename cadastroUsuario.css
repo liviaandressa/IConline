@@ -116,6 +116,8 @@ input:-webkit-autofill {
     }
     .conteudo-principal-titulo {
         font-size: 30px;
+        text-align: center
+    
     }
 
     .conteudo-imagem {
