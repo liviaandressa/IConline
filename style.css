@@ -172,21 +172,24 @@ li {
 }
 
 .filtro-conteudo{
-    background-color: #FFF2E7;
+    background-color: #656A73;
     position: fixed;
     top: 70px;
     width: 100%;
-    padding: 17px;
+    padding: 15px;
     display: flex;
-    gap: 250px;
+    gap: 230px;
     justify-content: center;
 
 }
 
 .item-filtro{
-    color: #323238;
+    color: #F5F8FF;
     font-family: 'Sarala', sans-serif;
-    font-weight: 250;
+    font-weight: 200;
     font-size: 15px;
     
 }
+
+
+
