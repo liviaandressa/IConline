@@ -155,3 +155,77 @@ li {
         width: 100%;
     }
 }
+
+
+/* Página Home*/
+.menu-horizontal{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px;
+    background-color: #6172F3;
+    height: 30px;
+    position: fixed;
+    width: 100%;
+  
+}
+
+.filtro-conteudo{
+    background-color: #656A73;
+    position: fixed;
+    top: 70px;
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    gap: 230px;
+    justify-content: center;
+
+}
+
+.item-filtro{
+    color: #F5F8FF;
+    font-family: 'Sarala', sans-serif;
+    font-weight: 200;
+    font-size: 15px;
+    position: relative;
+
+    
+}
+
+
+.modal {
+    color: black;
+    display: none;  /* Modal escondido por padrão */
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #D9D9D9;
+    padding: 10px;
+    border: 1px solid #656A73;
+    border-radius: 5px;
+    width: 600px;  /* Largura do modal */
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.item-filtro:hover .modal {
+    display: block; /* Exibe o modal ao passar o mouse */
+}
+
+.item-filtro:hover {
+    background-color: blue;
+}
+
+
+.modal-content {
+    display: grid;  /* Alinha os itens em grid */
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas de tamanho igual */
+    gap: 20px;     /* Espaçamento entre os itens */
+    text-align: center;  /* Centraliza o texto dentro das divs */
+}
+
+.item-modal{
+    font-size: 13px;
+}
