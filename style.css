@@ -155,3 +155,38 @@ li {
         width: 100%;
     }
 }
+
+
+/* Página Home*/
+.menu-horizontal{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px;
+    background-color: #6172F3;
+    height: 30px;
+    position: fixed;
+    width: 100%;
+  
+}
+
+.filtro-conteudo{
+    background-color: #FFF2E7;
+    position: fixed;
+    top: 70px;
+    width: 100%;
+    padding: 17px;
+    display: flex;
+    gap: 250px;
+    justify-content: center;
+
+}
+
+.item-filtro{
+    color: #323238;
+    font-family: 'Sarala', sans-serif;
+    font-weight: 250;
+    font-size: 15px;
+    
+}
