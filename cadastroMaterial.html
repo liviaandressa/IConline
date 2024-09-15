@@ -10,12 +10,6 @@
 <body>
     <header class="cabecalho">
         <h3 class="cabecalho-titulo">IConline</h3>
-        <form class="cabecalho-pesquisa" action="cadastroMaterial.html" method="get">
-            <input type="text" placeholder="Pesquisar..." aria-label="Pesquisar" />
-            <button type="submit">
-                <img src="/imagens/lupa-icon.png" alt="Buscar" />
-            </button>
-        </form>
         <nav class="cabecalho-menu">
             <a class="cabecalho-item-menu" href="perfil.html">Perfil</a>
             <a class="cabecalho-item-menu" href="cadastroMaterial.html">Cadastrar Material</a>
@@ -24,53 +18,66 @@
     </header>
     <main class="conteudo">
         <section class="form-section">
-            <h2>Para cadastrar um novo material, é necessário que você preencha algumas informações sobre o arquivo.</h2>
+            <h2 class="form-description">Para cadastrar um novo material, é necessário que você preencha algumas informações sobre o arquivo.</h2>
             <form>
-                <div class="form-group">
-                    <label for="nome">Nome do arquivo:</label>
-                    <input type="text" id="nome" name="nome" />
-                </div>
-                <div class="form-group">
-                    <label for="disciplina">Disciplina:</label>
-                    <input type="text" id="disciplina" name="disciplina" />
-                </div>
-                <div class="form-group">
-                    <label for="professor">Professor:</label>
-                    <input type="text" id="professor" name="professor" />
-                </div>
-                <div class="form-group">
-                    <label for="semestre">Semestre:</label>
-                    <input type="text" id="semestre" name="semestre" />
-                </div>
-                <div class="form-group">
-                    <label for="descricao">Descrição:</label>
-                    <textarea id="descricao" name="descricao"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="link">Link:</label>
-                    <input type="url" id="link" name="link" />
-                </div>
-                <div class="form-group">
-                    <label>Tipo:</label>
-                    <div class="checkbox-group">
-                        <label><input type="checkbox" name="tipo" value="Lista" /> Lista</label>
-                        <label><input type="checkbox" name="tipo" value="Prova" /> Prova</label>
-                        <label><input type="checkbox" name="tipo" value="Projeto" /> Projeto</label>
+                <div class="form-header">
+                    <div class="form-left">
+                        <div class="form-group">
+                            <label for="nome">Nome do arquivo:</label>
+                            <input type="text" id="nome" name="nome" />
+                        </div>
+                        <div class="form-group">
+                            <label for="disciplina">Disciplina:</label>
+                            <input type="text" id="disciplina" name="disciplina" />
+                        </div>
+                        <div class="form-group">
+                            <label for="professor">Professor:</label>
+                            <input type="text" id="professor" name="professor" />
+                        </div>
+                        <div class="form-group">
+                            <label for="semestre">Semestre:</label>
+                            <input type="text" id="semestre" name="semestre" />
+                        </div>
+                        <div class="form-group">
+                            <label for="descricao">Descrição:</label>
+                            <textarea id="descricao" name="descricao"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-right">
+                        <div class="form-group">
+                            <label>Tipo:</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="tipo" value="Lista" /> Lista</label>
+                                <label><input type="checkbox" name="tipo" value="Prova" /> Prova</label>
+                                <label><input type="checkbox" name="tipo" value="Projeto" /> Projeto</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Curso:</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="curso" value="CC" /> Ciência da Computação</label>
+                                <label><input type="checkbox" name="curso" value="EC" /> Engenharia da Computação</label>
+                                <label><input type="checkbox" name="curso" value="Eletivas" /> Eletivas</label>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label>Curso:</label>
-                    <div class="checkbox-group">
-                        <label><input type="checkbox" name="curso" value="CC" /> Ciência da Computação</label>
-                        <label><input type="checkbox" name="curso" value="EC" /> Engenharia da Computação</label>
-                        <label><input type="checkbox" name="curso" value="Eletivas" /> Eletivas</label>
+                <div class="form-buttons">
+                    <div class="form-group">
+                        <label for="link">Link:</label>
+                        <input type="url" class="submit-link" name="link" />
                     </div>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="submit-btn">Buscar Arquivo</button>
+                    <div class="form-group">
+                        <input type="file" id="meuArquivo" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpeg,.jpg,.png" style="display: none;">
+                        <button type="button" class="buscar-btn">Buscar Arquivo</button>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="submit-btn">Salvar</button>
+                    </div>
                 </div>
             </form>
         </section>
     </main>
+    <script src="javaScript.js"></script>
 </body>
 </html>

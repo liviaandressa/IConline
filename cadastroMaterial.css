@@ -23,6 +23,8 @@ header.cabecalho {
     height: 30px;
     position: fixed;
     width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 .cabecalho-titulo {
@@ -30,48 +32,6 @@ header.cabecalho {
     color: #FFFFFF;
     font-weight: 70;
     font-size: 24px;
-}
-
-header.cabecalho form.cabecalho-pesquisa {
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-header.cabecalho form.cabecalho-pesquisa input {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.397);
-    color: #000;
-    width: 350px;
-    outline: none;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-header.cabecalho form.cabecalho-pesquisa input::placeholder {
-    color: #fff;
-}
-
-header.cabecalho form.cabecalho-pesquisa input:focus {
-    background-color: rgba(255, 255, 255, 0.4);
-}
-
-header.cabecalho form.cabecalho-pesquisa button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    right: 10px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-header.cabecalho form.cabecalho-pesquisa button img {
-    width: 23px;
-    height: 18px;
 }
 
 .cabecalho-menu {
@@ -95,8 +55,8 @@ main.conteudo {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    padding-top: 140px;
+    min-height: 95vh;
+    padding-top: 120px;
 }
 
 .form-section {
@@ -104,20 +64,48 @@ main.conteudo {
     padding: 40px;
     border-radius: 10px;
     width: 100%;
-    max-width: 800px;
-    margin-top: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.form-section h2 {
-    font-family: 'Sarala', sans-serif;
-    font-size: 22px;
-    color: #FFF2E7;
-    margin-bottom: 20px;
+.form-description {
     text-align: center;
+    color: #FFF2E7;
+    font-size: 23px;
+    margin-bottom: 20px;
+}
+
+.form-header {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+}
+
+.form-left,
+.form-right {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-left {
+    flex: 1;
+    margin-right: 100px;
+}
+
+.form-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .form-group {
-    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .form-group label {
@@ -130,13 +118,13 @@ main.conteudo {
 .form-group textarea {
     width: 100%;
     padding: 15px;
-    gap: 1px;
     border: 2px solid rgba(128, 152, 249, 0.7);
     border-radius: 10px;
     background-color: #ffffff;
     color: #000;
     outline: none;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
 }
 
 .form-group input::placeholder,
@@ -151,29 +139,99 @@ main.conteudo {
 }
 
 textarea {
-    height: 100px;
+    height: 150px;
 }
 
-.checkbox-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    color: #FFF2E7;
+.checkbox-group input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #fff;
+    border: 2px solid #6172F3;
+    border-radius: 4px;
+    width: 2px;
+    height: 2px;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    margin-right: 10px;
+    vertical-align: middle;
+    z-index: 1;
+}
+
+.checkbox-group input[type="checkbox"]:checked::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: #6172F3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 2px;
 }
 
 .checkbox-group label {
-    margin-left: 5px;
+    display: flex;
+    align-items: center;
+    color: #FFF2E7;
+    font-size: 16px;
+}
+
+.links-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group .submit-link {
+    width: 40%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid rgba(128, 152, 249, 0.7);
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #000;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group .submit-link::placeholder {
+    color: #666;
+}
+
+.form-group .submit-link:focus {
+    border-color: #6172F3;
+    box-shadow: 0 0 0 4px rgba(97, 114, 243, 0.3);
+}
+
+.buscar-btn {
+    background-color: #8098F9;
+    color: white;
+    border: 2px solid transparent;
+    padding: 15px;
+    border-radius: 13px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    width: 20%;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.buscar-btn:hover {
+    border-color: #6172F3;
+    box-shadow: 0 0 0 4px rgba(97, 114, 243, 0.3);
 }
 
 .submit-btn {
     background-color: #8098F9;
     color: white;
+    margin: 0 auto;
     border: 2px solid transparent;
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 13px;
     cursor: pointer;
-    width: 100%;
-    margin-top: 20px;
+    width: 30%;
     outline: none;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -201,6 +259,10 @@ textarea {
     .form-group input,
     .form-group textarea {
         font-size: 14px;
+    }
+
+    .buscar-btn {
+        padding: 10px 16px;
     }
 
     .submit-btn {
