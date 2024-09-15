@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarala:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Sarala', sans-serif;
+    background-color: #2F2E41;
+    color: #fff;
+}
+
+header.cabecalho {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px;
+    background-color: #6172F3;
+    height: 30px;
+    position: fixed;
+    width: 100%;
+}
+
+.cabecalho-titulo {
+    font-family: 'Righteous', cursive;
+    color: #FFFFFF;
+    font-weight: 70;
+    font-size: 24px;
+}
+
+header.cabecalho form.cabecalho-pesquisa {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+header.cabecalho form.cabecalho-pesquisa input {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.397);
+    color: #000;
+    width: 350px;
+    outline: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+header.cabecalho form.cabecalho-pesquisa input::placeholder {
+    color: #fff;
+}
+
+header.cabecalho form.cabecalho-pesquisa input:focus {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+header.cabecalho form.cabecalho-pesquisa button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header.cabecalho form.cabecalho-pesquisa button img {
+    width: 23px;
+    height: 18px;
+}
+
+.cabecalho-menu {
+    display: flex;
+    gap: 80px;
+    align-items: center;
+}
+
+.cabecalho-item-menu {
+    color: #FFF2E7;
+    font-family: 'Sarala', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.cabecalho-item-menu:hover {
+    text-decoration: underline;
+}
+
+main.conteudo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 140px;
+}
+
+.form-section {
+    background-color: #2F2E41;
+    padding: 40px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 20px;
+}
+
+.form-section h2 {
+    font-family: 'Sarala', sans-serif;
+    font-size: 22px;
+    color: #FFF2E7;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #FFF2E7;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    gap: 1px;
+    border: 2px solid rgba(128, 152, 249, 0.7);
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #000;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #666;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #6172F3;
+    box-shadow: 0 0 0 4px rgba(97, 114, 243, 0.3);
+}
+
+textarea {
+    height: 100px;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    color: #FFF2E7;
+}
+
+.checkbox-group label {
+    margin-left: 5px;
+}
+
+.submit-btn {
+    background-color: #8098F9;
+    color: white;
+    border: 2px solid transparent;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submit-btn:hover {
+    border-color: #6172F3;
+    box-shadow: 0 0 0 4px rgba(97, 114, 243, 0.3);
+}
+
+@media (max-width: 768px) {
+    .form-section {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-section {
+        padding: 20px;
+    }
+
+    .form-section h2 {
+        font-size: 18px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 14px;
+    }
+
+    .submit-btn {
+        padding: 10px 16px;
+    }
+}
