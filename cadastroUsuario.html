@@ -1,3 +1,5 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cadastre-se</title>
     <link rel="stylesheet" href="cadastroUsuario.css" />
+    <script>
+      function redirecionarParaHome() {
+        window.location.href = 'home.html'; // Redireciona para a página 'home.html'
+      }
+    </script>
   </head>
   <body>
     <main>
@@ -41,7 +48,14 @@
             /><br /><br />
 
             <!-- Botão de envio -->
-            <button class="botao-principal" type="button">Cadastrar</button>
+            <button
+              class="botao-principal"
+              type="button"
+              id="botao-cadastrar"
+              onclick="redirecionarParaHome()"
+            >
+              Cadastrar
+            </button>
           </form>
         </div>
 
