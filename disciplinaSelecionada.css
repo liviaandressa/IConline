@@ -115,6 +115,19 @@ main.conteudo {
     left: 66%;
 }
 
+.link-prova-ab1 {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .link-prova-ab1:hover {
+    color: #0056b3;
+  }
+
 @media (max-width: 768px) {
     main.conteudo {
         margin-top: 100px;
