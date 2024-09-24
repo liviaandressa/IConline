@@ -193,8 +193,7 @@ li {
     
 }
 
-/**modais dos filtros na página home*/
-
+/** Modais dos filtros na página home */
 .modal {
     color: black;
     display: none;  /* Modal escondido por padrão */
@@ -202,23 +201,14 @@ li {
     top: 40px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #D9D9D9;
+    background-color: #D9D9D9; /* Sem cor de fundo */
     padding: 10px;
     border: 1px solid #656A73;
     border-radius: 5px;
-    width: 600px;  /* Largura do modal */
+    width: 600px;
     z-index: 10;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-.item-filtro:hover .modal {
-    display: block; /* Exibe o modal ao passar o mouse */
-}
-
-.item-filtro:hover {
-    background-color: blue;
-}
-
 
 .modal-content {
     display: grid;  /* Alinha os itens em grid */
@@ -227,6 +217,20 @@ li {
     text-align: center;  /* Centraliza o texto dentro das divs */
 }
 
-.item-modal{
-    font-size: 13px;
+.item-filtro {
+    position: relative;  /* Para posicionar o modal corretamente */
 }
+
+.item-modal {
+    font-size: 13px;
+    cursor: pointer; /* Para indicar que o item é clicável */
+    color: #323238;
+    font-family: 'Open Sans', sans-serif; /* Mudando para Open Sans */
+    font-weight: 300; /* Mais fino */
+}
+
+
+.item-filtro:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Efeito de hover */
+}
+
