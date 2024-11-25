@@ -58,6 +58,7 @@ main.conteudo {
     align-items: center;
     min-height: 95vh;
     padding-top: 100px;
+    background-color: #2F2E41;
 }
 
 .form-section {
