@@ -117,6 +117,131 @@ body {
 .item-modal:hover {
     background-color: #F0F0F0;
 }
+/* Botão flutuante */
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #6172F3;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+/* Efeito de hover */
+.floating-button:hover {
+    background-color: #4a5bcc;
+    transform: scale(1.1);
+}
+
+/* Estilização do modal */
+.modal-cadastro {
+    display: none; /* Oculto por padrão */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex; /* Centraliza com flexbox */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-cadastro-content {
+    position: relative; /* Necessário para posicionar o botão de fechar */
+    background-color: #323238;
+    width: 40%; /* Aumenta a largura do modal */
+    height: 60%;
+    max-width: 700px; /* Ajusta o tamanho máximo */
+    padding: 30px; /* Aumenta o espaçamento interno */
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: #fff; /* Ajusta para melhor visibilidade em fundo escuro */
+}
+
+.modal-cadastro-content h2 {
+    margin-bottom: 20px;
+    color: #6172F3;
+    font-size: 24px; /* Tamanho ajustado para destaque */
+}
+
+.modal-cadastro-content textarea {
+    width: 97%;
+    margin-bottom: 15px;
+    padding: 15px; /* Aumenta o espaço interno para o texto e o placeholder */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: none;
+    font-size: 16px; /* Tamanho da fonte do texto e do placeholder */
+    color: #000; /* Texto preto para contraste */
+    background-color: #f9f9f9; /* Fundo claro */
+    height: 217px; /* Ajuste a altura total do campo */
+}
+
+.modal-cadastro-content textarea::placeholder {
+    color: #323238; /* Cor escura dentro do placeholder */
+    font-style: italic;
+}
+
+.file-icons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+
+.file-icon {
+    font-size: 30px;
+    cursor: pointer;
+    color: #6172F3;
+    transition: color 0.3s ease;
+}
+
+.file-icon:hover {
+    color: #4a5bcc;
+}
+
+.modal-cadastro-content button {
+    background-color: #6172F3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.modal-cadastro-content button:hover {
+    background-color: #4a5bcc;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff; /* Ajustado para maior contraste */
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: #6172F3;
+}
 
 /* Estilo do Feed de Postagens */
 .card-container {

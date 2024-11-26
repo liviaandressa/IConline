@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <title>Feed</title>
     <link rel="stylesheet" href="styleHome.css" />
 </head>
 <body>
@@ -46,6 +47,36 @@
         <!--Filtro de lista no menu-->
         <a class="item-filtro" href="">Listas</a>
     </div>
+
+    <!-- Botão redondo -->
+    <button class="floating-button">+</button>
+
+    <!-- Modal para cadastrar conteúdo -->
+    <div id="modal-cadastro" class="modal-cadastro">
+        <div class="modal-cadastro-content">
+            <span class="close-modal">&times;</span>
+            <form id="cadastro-form">
+                <textarea placeholder="O que você gostaria de contar?" rows="4"></textarea>
+                
+                <!-- Ícones para anexar imagem e vídeo -->
+                <div class="file-icons">
+                    <label for="upload-imagem" class="file-icon">
+                        <i class="fas fa-image"></i> <!-- Ícone de imagem -->
+                    </label>
+                    <input type="file" id="upload-imagem" accept="image/*" style="display: none;">
+                    
+                    <label for="upload-video" class="file-icon">
+                        <i class="fas fa-video"></i> <!-- Ícone de vídeo -->
+                    </label>
+                    <input type="file" id="upload-video" accept="video/*" style="display: none;">
+                </div>
+                
+                <button type="submit">Publicar</button>
+            </form>
+        </div>
+    </div>
+
+
 
     <!-- Feed -->
     <div class="card-container">
@@ -110,24 +141,8 @@
             </div>
         </div>
     </div>
+
     
-
-    <script>
-        // JavaScript para controlar a exibição do modal
-        const disciplinaLink = document.getElementById('disciplinaLink');
-        const disciplinaModal = document.getElementById('disciplinaModal');
-
-        disciplinaLink.addEventListener('click', function(event) {
-            event.preventDefault(); // Previne o comportamento padrão do link
-            disciplinaModal.style.display = disciplinaModal.style.display === 'block' ? 'none' : 'block'; // Alterna a exibição do modal
-        });
-
-        // Fechar o modal ao clicar fora dele
-        window.addEventListener('click', function(event) {
-            if (event.target === disciplinaModal) {
-                disciplinaModal.style.display = 'none';
-            }
-        });
-    </script>
+    <script src="/funcoesHome.js"></script>
 </body>
 </html>
