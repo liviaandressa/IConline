@@ -1,30 +1,30 @@
 /** @format */
 
 const API_BASE_URL = 'http://127.0.0.1:8000/backend/api'; // Substitua pela URL correta
+
 const disciplinaId = new URLSearchParams(window.location.search).get('id'); // Obtém o ID da disciplina pela URL
-const tipoMaterial = new URLSearchParams(window.location.search).get('tipo'); // Obtém o tipo de material (Provas, Listas ou Projetos)
+const tipoMaterial = new URLSearchParams(window.location.search).get('tipo'); // Obtém o tipo de material (provas, listas, etc.)
 
 const disciplinaNome = document.getElementById('disciplinaNome');
 const materiaisTableBody = document.getElementById('materiaisTableBody');
 const descricaoMaterial = document.getElementById('descricaoMaterial');
 
-// Função para obter o token de autenticação (supondo que ele esteja armazenado no localStorage)
+// Verificação se o token existe
 const token = localStorage.getItem('authToken'); // ou sessionStorage.getItem('authToken')
 
-// Verificação se o token existe
 if (!token) {
   console.error('Token de autenticação não encontrado.');
-  // Opcional: Redirecionar o usuário para a página de login
-  window.location.href = 'login.html'; // Substitua pelo caminho correto da página de login
+  window.location.href = 'login.html'; // Redireciona para login se não houver token
 }
 
-// Função para buscar materiais da API (Provas, Listas ou Projetos)
+// Função para buscar materiais da API
 async function fetchMateriais() {
   try {
-    // A requisição é feita apenas se o token for válido
     if (!token) {
       throw new Error('Token de autenticação não encontrado.');
     }
+    console.log(token);
+    console.log(localStorage.getItem('authToken')); // Verifique o valor do token
 
     const response = await fetch(
       `${API_BASE_URL}/disciplinas/${disciplinaId}/${tipoMaterial}/`,
@@ -32,24 +32,21 @@ async function fetchMateriais() {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${token}`, // Envia o token no cabeçalho
-          'Content-Type': 'application/json', // Cabeçalho para indicar o tipo de conteúdo
+          'Content-Type': 'application/json',
         },
       }
     );
 
     if (!response.ok) {
-      // Se a resposta não for OK, mostra um erro específico
       throw new Error(`Erro ao carregar materiais: ${response.statusText}`);
     }
 
     const data = await response.json();
-    disciplinaNome.textContent = data.nome;
+    disciplinaNome.textContent = data.disciplina;
 
-    // Limpa a tabela antes de adicionar novos itens
     materiaisTableBody.innerHTML = '';
 
-    // Insere os materiais na tabela
-    data.materiais.forEach((material) => {
+    data[tipoMaterial].forEach((material) => {
       const row = document.createElement('tr');
 
       const tdNome = document.createElement('td');
@@ -96,9 +93,9 @@ async function fetchMateriais() {
     });
   } catch (error) {
     console.error(error);
-    disciplinaNome.textContent = 'Erro ao carregar disciplina';
+    disciplinaNome.textContent = 'Erro ao carregar materiais';
   }
 }
 
-// Carrega os materiais da API ao abrir a página
+// Carrega os materiais assim que a página é aberta
 fetchMateriais();
