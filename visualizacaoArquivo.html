@@ -1,3 +1,5 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -21,12 +23,14 @@
       <h3 class="cabecalho-titulo">IConline</h3>
       <nav class="cabecalho-menu">
         <a class="cabecalho-item-menu" href="perfilUsuario.html">Perfil</a>
-        <a class="cabecalho-item-menu" href="cadastroMaterial.html">Cadastrar Material</a>
+        <a class="cabecalho-item-menu" href="cadastroMaterial.html"
+          >Cadastrar Material</a
+        >
         <a class="cabecalho-item-menu" href="index.html">Sair</a>
       </nav>
     </header>
     <main>
-      <h1>Redes de computadores</h1>
+      <h1 id="disciplinaNome">Carregando...</h1>
       <table>
         <thead>
           <tr>
@@ -36,60 +40,35 @@
             <th>Itens</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>Prova-AB1</td>
-            <td>Almir</td>
-            <td>2024.1</td>
-            <td>
-              <button type="button" data-bs-toggle="modal" data-bs-target="#confirmModal" class="btn btn-link text-white">
-                <i class="bi bi-info-circle"></i>
-              </button>
-              <a href="imagens/Prova-AB1.pdf" target="_blank" download class="btn btn-link text-white">
-                <i class="bi bi-download"></i>
-              </a>
-              <button type="button" data-bs-toggle="modal" data-bs-target="#denunciarModal" class="btn btn-link text-white">
-                <i class="bi bi-flag"></i>
-              </button>
-              <button type="button" class="btn btn-link text-white delete-btn">
-                <i class="bi bi-trash"></i>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>Prova-AB2</td>
-            <td>Almir</td>
-            <td>2024.2</td>
-            <td>
-              <button type="button" data-bs-toggle="modal" data-bs-target="#confirmModal" class="btn btn-link text-white">
-                <i class="bi bi-info-circle"></i>
-              </button>
-              <a href="imagens/Prova-AB2.pdf" target="_blank" download class="btn btn-link text-white">
-                <i class="bi bi-download"></i>
-              </a>
-              <button type="button" data-bs-toggle="modal" data-bs-target="#denunciarModal" class="btn btn-link text-white">
-                <i class="bi bi-flag"></i>
-              </button>
-              <button type="button" class="btn btn-link text-white delete-btn">
-                <i class="bi bi-trash"></i>
-              </button>
-            </td>
-          </tr>
+        <tbody id="materiaisTableBody">
+          <!-- Linhas dinâmicas serão inseridas aqui -->
         </tbody>
       </table>
 
       <!-- Modal de descrição -->
-      <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+      <div
+        class="modal fade"
+        id="confirmModal"
+        tabindex="-1"
+        aria-labelledby="confirmModalLabel"
+        aria-hidden="true"
+      >
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="confirmModalLabel">Descrição</h5>
             </div>
             <div class="modal-body">
-              <p>Lorem Ipsum é simplesmente um texto fictício...</p>
+              <p id="descricaoMaterial">Carregando...</p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Fechar
+              </button>
             </div>
           </div>
         </div>
@@ -97,18 +76,38 @@
       <!-- Fim Modal de descrição -->
 
       <!-- Modal de denunciar -->
-      <div class="modal fade" id="denunciarModal" tabindex="-1" aria-labelledby="denunciarModalLabel" aria-hidden="true">
+      <div
+        class="modal fade"
+        id="denunciarModal"
+        tabindex="-1"
+        aria-labelledby="denunciarModalLabel"
+        aria-hidden="true"
+      >
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="denunciarModalLabel">Denunciar arquivo</h5>
+              <h5 class="modal-title" id="denunciarModalLabel">
+                Denunciar arquivo
+              </h5>
             </div>
             <div class="modal-body">
               <p>Ao confirmar, sua denúncia será analisada...</p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Confirmar</button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cancelar
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+              >
+                Confirmar
+              </button>
             </div>
           </div>
         </div>
@@ -116,7 +115,6 @@
       <!-- Fim Modal de denunciar -->
     </main>
 
-    <!-- Inclusão do script JavaScript -->
-    <script src="javaScript.js"></script>
+    <script src="visualizacaoArquivo.js"></script>
   </body>
 </html>
