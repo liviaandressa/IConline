@@ -42,11 +42,19 @@
               </div>
               <div class="form-group">
                 <label for="disciplina">Disciplina:</label>
-                <input type="text" id="disciplina" name="disciplina" />
+                <select id="disciplina" name="disciplina">
+                  <option value="" disabled selected>
+                    Selecione uma disciplina
+                  </option>
+                </select>
               </div>
               <div class="form-group">
                 <label for="professor">Professor:</label>
-                <input type="text" id="professor" name="professor" />
+                <select id="professor" name="professor">
+                  <option value="" disabled selected>
+                    Selecione um professor
+                  </option>
+                </select>
               </div>
               <div class="form-group">
                 <label for="semestre">Semestre:</label>
@@ -60,17 +68,17 @@
             <div class="form-right">
               <div class="form-group">
                 <label>Tipo:</label>
-                <div class="checkbox-group">
+                <div class="radio-group">
                   <label
-                    ><input type="checkbox" name="tipo" value="Lista" />
+                    ><input type="radio" name="tipo" value="Lista" />
                     Lista</label
                   >
                   <label
-                    ><input type="checkbox" name="tipo" value="Prova" />
+                    ><input type="radio" name="tipo" value="Prova" />
                     Prova</label
                   >
                   <label
-                    ><input type="checkbox" name="tipo" value="Projeto" />
+                    ><input type="radio" name="tipo" value="Projeto" />
                     Projeto</label
                   >
                 </div>
@@ -79,12 +87,12 @@
                 <label>Curso:</label>
                 <div class="checkbox-group">
                   <label
-                    ><input type="checkbox" name="curso" value="CC" /> Ciência
-                    da Computação</label
+                    ><input type="checkbox" name="curso" value="1" /> Ciência da
+                    Computação</label
                   >
                   <label
-                    ><input type="checkbox" name="curso" value="EC" />
-                    Engenharia da Computação</label
+                    ><input type="checkbox" name="curso" value="2" /> Engenharia
+                    da Computação</label
                   >
                   <label
                     ><input type="checkbox" name="curso" value="Eletivas" />
