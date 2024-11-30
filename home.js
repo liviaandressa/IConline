@@ -1,6 +1,6 @@
 /** @format */
 
-const API_BASE_URL = 'http://127.0.0.1:8000/backend/api'; // Substitua pelo endereço correto da sua API
+const API_BASE_URL = 'http://127.0.0.1:8000/backend/api';
 const disciplinaLink = document.getElementById('disciplinaLink');
 const disciplinaModal = document.getElementById('disciplinaModal');
 const disciplinaList = document.getElementById('disciplinaList');
@@ -9,6 +9,7 @@ const disciplinaList = document.getElementById('disciplinaList');
 const cursos = [
   { id: 1, nome: 'Ciência da Computação' },
   { id: 2, nome: 'Engenharia de Computação' },
+  //{ id: 3, nome: 'Eletivas' },
 ];
 
 // Recupera o token do localStorage (ou sessionStorage)
@@ -67,7 +68,7 @@ async function renderDisciplinas() {
 
       // Cria o link para cada disciplina
       const disciplinaLink = document.createElement('a');
-      disciplinaLink.textContent = disciplina.nome; // Certifique-se de que "nome" é a chave correta na sua API
+      disciplinaLink.textContent = disciplina.nome;
       disciplinaLink.href = `disciplinaSelecionada.html?id=${disciplina.id}`; // Passa o ID da disciplina na URL
 
       disciplinaItem.appendChild(disciplinaLink);
@@ -97,3 +98,18 @@ window.addEventListener('click', function (event) {
     disciplinaModal.style.display = 'none';
   }
 });
+
+document
+  .getElementById('logoutLink')
+  .addEventListener('click', function (event) {
+    event.preventDefault(); // Impede o comportamento padrão do link
+
+    // Limpar informações de autenticação
+    localStorage.removeItem('token'); // Remove o token do localStorage
+    sessionStorage.removeItem('token'); // Remove o token do sessionStorage (se necessário)
+
+    document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+
+    // Redirecionar para a página de login
+    window.location.href = 'index.html';
+  });
