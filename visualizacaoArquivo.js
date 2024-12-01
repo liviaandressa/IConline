@@ -1,6 +1,6 @@
 /** @format */
 
-const API_BASE_URL = 'http://127.0.0.1:8000/backend/api'; // Substitua pela URL correta
+const API_BASE_URL = 'http://127.0.0.1:8000/backend/api';
 
 const disciplinaId = new URLSearchParams(window.location.search).get('id'); // Obtém o ID da disciplina pela URL
 const tipoMaterial = new URLSearchParams(window.location.search).get('tipo'); // Obtém o tipo de material (provas, listas, etc.)
@@ -31,7 +31,7 @@ async function fetchMateriais() {
       {
         method: 'GET',
         headers: {
-          Authorization: `Bearer ${token}`, // Envia o token no cabeçalho
+          Authorization: `Basic ${token}`, // Envia o token no cabeçalho
           'Content-Type': 'application/json',
         },
       }

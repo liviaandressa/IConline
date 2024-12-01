@@ -1,6 +1,6 @@
 /** @format */
 
-const API_BASE_URL = 'http://127.0.0.1:8000/backend/api'; // Substitua pela URL correta
+const API_BASE_URL = 'http://127.0.0.1:8000/backend/api';
 const disciplinaId = new URLSearchParams(window.location.search).get('id'); // Obtém o ID da disciplina pela URL
 
 const disciplinaNome = document.getElementById('disciplinaNome');
