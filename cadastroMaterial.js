@@ -1,46 +1,55 @@
 /** @format */
 
-document.addEventListener("DOMContentLoaded", () => {
-    // Botão de buscar arquivos.
-    const buscarBtn = document.querySelector('.buscar-btn');
-    const meuArquivo = document.getElementById('meuArquivo');
+document
+  .getElementById('materialForm')
+  .addEventListener('submit', function (event) {
+    event.preventDefault(); // Impede o envio tradicional do formulário
 
-    if (buscarBtn && meuArquivo) {
-      buscarBtn.addEventListener('click', () => {
-        meuArquivo.click();
-      });
+    const formData = new FormData();
+    // Adicionando campos de texto
+    formData.append('nome', document.getElementById('nome').value);
+    formData.append('disciplina', document.getElementById('disciplina').value);
+    formData.append('professor', document.getElementById('professor').value);
+    formData.append('semestre', document.getElementById('semestre').value);
+    formData.append('descricao', document.getElementById('descricao').value);
+    formData.append('link', document.querySelector('input[name="link"]').value);
+
+    // Adicionando checkboxes (tipos e cursos)
+    const tipos = document.querySelectorAll('input[name="tipo"]:checked');
+    tipos.forEach((tipo) => formData.append('tipo', tipo.value));
+
+    const cursos = document.querySelectorAll('input[name="curso"]:checked');
+    cursos.forEach((curso) => formData.append('curso', curso.value));
+
+    // Adicionando o arquivo
+    const arquivo = document.getElementById('meuArquivo').files[0];
+    if (arquivo) {
+      formData.append('arquivo', arquivo);
     }
 
-    const confirmSave = document.getElementById('confirmSave');
-    if (confirmSave) {
-      confirmSave.addEventListener('click', function () {
-        // Aqui você pode colocar a ação de salvar os dados
-        const modal = bootstrap.Modal.getInstance(
-          document.getElementById('confirmModal')
-        );
-        modal.hide();
-        alert('Dados salvos com sucesso!');
-        location.reload();
-      });
+    // Recupera o token do localStorage (ou sessionStorage)
+    const token = localStorage.getItem('authToken'); // Certifique-se de armazenar o token ao fazer login
+
+    if (!token) {
+      console.error('Token não encontrado. O usuário precisa estar logado.');
+      alert('Você precisa estar logado para realizar o cadastro.');
+      return; // Impede o envio se não houver token
     }
 
-    const downloadBtn = document.getElementById('downloadBtn');
-    if (downloadBtn) {
-      downloadBtn.onclick = function () {
-        const link = document.createElement('a');
-        link.href = 'Documentos/IConline/Prova-AB1.txt'; // Caminho real do arquivo
-        link.download = 'Prova-AB1.txt'; // Nome do arquivo a ser baixado
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      };
-    }
-
-    // Função para excluir arquivo da lista
-    document.querySelectorAll('.delete-btn').forEach(button => {
-      button.addEventListener('click', function () {
-        const row = this.closest('tr'); // Identifica a linha correspondente
-        if (row) row.remove(); // Remove a linha
+    // Enviar os dados para a API
+    fetch('http://127.0.0.1:8000/backend/api/materiais/', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${token}`, // Use o prefixo 'Bearer' para o token JWT
+      },
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        alert(data.message); // Exibe a mensagem de sucesso
+      })
+      .catch((error) => {
+        console.error('Erro:', error);
+        alert('Ocorreu um erro ao cadastrar o material.');
       });
-    });
   });

@@ -32,7 +32,8 @@
           Para cadastrar um novo material, é necessário que você preencha
           algumas informações sobre o arquivo.
         </h2>
-        <form>
+        <!-- Formulário atualizado -->
+        <form id="materialForm">
           <div class="form-header">
             <div class="form-left">
               <div class="form-group">
@@ -102,70 +103,17 @@
               <input
                 type="file"
                 id="meuArquivo"
+                name="arquivo"
                 accept=".pdf,.doc,.docx,.xls,.xlsx,.jpeg,.jpg,.png"
-                style="display: none"
               />
               <button type="button" class="buscar-btn">Buscar Arquivo</button>
             </div>
-            <!--Botão de salvas que abre modal-->
-
             <!-- Botão de Salvar -->
             <div class="form-group">
-              <button
-                type="button"
-                class="submit-btn btn btn-primary"
-                data-bs-toggle="modal"
-                data-bs-target="#confirmModal"
-              >
+              <button type="submit" class="submit-btn btn btn-primary">
                 Salvar
               </button>
             </div>
-
-            <!-- Modal de Confirmação -->
-            <div
-              class="modal fade"
-              id="confirmModal"
-              tabindex="-1"
-              aria-labelledby="confirmModalLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="confirmModalLabel">
-                      Confirmação
-                    </h5>
-                    <button
-                      type="button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <div class="modal-body">
-                    Deseja realmente salvar os dados?
-                  </div>
-                  <div class="modal-footer">
-                    <button
-                      type="button"
-                      class="btn btn-secondary"
-                      data-bs-dismiss="modal"
-                    >
-                      Cancelar
-                    </button>
-                    <button
-                      type="button"
-                      class="btn btn-primary"
-                      id="confirmSave"
-                    >
-                      Confirmar
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!--fim do botão de salvar e moral-->
           </div>
         </form>
       </section>
