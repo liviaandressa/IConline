@@ -48,7 +48,7 @@ header.cabecalho {
 }
 
 .cabecalho-item-menu:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 main.conteudo {
@@ -68,11 +68,14 @@ main.conteudo {
 
 .container-opcoes {
     display: flex;
-    justify-content: space-between;
-    width: 80%;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     max-width: 1200px;
+    margin: auto;
     position: relative;
 }
+
 
 .div-titulos {
     display: flex;

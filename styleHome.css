@@ -48,7 +48,7 @@ body {
 }
 
 .cabecalho-item-menu:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 /* Filtro da Página */
