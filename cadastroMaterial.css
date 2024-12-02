@@ -33,6 +33,7 @@ header.cabecalho {
     color: #FFFFFF;
     font-weight: 70;
     font-size: 24px;
+    text-decoration: none;
 }
 
 .cabecalho-menu {
@@ -46,10 +47,11 @@ header.cabecalho {
     font-family: 'Sarala', sans-serif;
     font-weight: 300;
     font-size: 18px;
+    text-decoration: none;
 }
 
 .cabecalho-item-menu:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 main.conteudo {
@@ -160,8 +162,8 @@ textarea {
 .checkbox-group input[type="checkbox"]:checked::before {
     content: '';
     display: block;
-    width: 12px;
-    height: 12px;
+    width: 5px;
+    height: 5px;
     background-color: #6172F3;
     width: 30px;
     height: 30px;
@@ -206,6 +208,39 @@ textarea {
     box-shadow: 0 0 0 4px rgba(97, 114, 243, 0.3);
 }
 
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.radio-group label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+    color: #FFF2E7;
+    cursor: pointer;
+}
+
+.radio-group input[type="radio"] {
+    appearance: none;
+    background-color: #fff;
+    border: 1px solid #6172F3;
+    border-radius: 50%;
+    width: 5px; /* Bola menor */
+    height: 5px; /* Bola menor */
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.radio-group input[type="radio"]:checked {
+    background-color: #6172F3;
+}
+
+
 .buscar-btn {
     background-color: #8098F9;
     color: white;
@@ -213,6 +248,7 @@ textarea {
     padding: 15px;
     border-radius: 13px;
     cursor: pointer;
+    margin-top: 10px;
     margin-bottom: 10px;
     width: 20%;
     outline: none;
