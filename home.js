@@ -84,18 +84,12 @@ async function renderDisciplinas() {
 disciplinaLink.addEventListener('click', async function (event) {
   event.preventDefault(); // Previne o comportamento padrão do link
 
-  disciplinaModal.style.display =
-    disciplinaModal.style.display === 'block' ? 'none' : 'block'; // Alterna a exibição do modal
-
+  // Certifique-se de alternar corretamente o estilo do modal
   if (disciplinaModal.style.display === 'block') {
-    await renderDisciplinas();
-  }
-});
-
-// Fechar o modal ao clicar fora dele
-window.addEventListener('click', function (event) {
-  if (event.target === disciplinaModal) {
     disciplinaModal.style.display = 'none';
+  } else {
+    disciplinaModal.style.display = 'block';
+    await renderDisciplinas(); // Carrega as disciplinas apenas quando o modal é exibido
   }
 });
 
